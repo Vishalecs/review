@@ -6,12 +6,12 @@
   "scripts": {
     
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --no-source-map --watch assets/scss:assets/css",
+    
     
      "start": "node index.js",
     "build": "npm start"
   },
-  "author": "vikas",
+  "author": "vishal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -23,7 +23,7 @@
     "express-session": "^1.17.3",
     "mongoose": "^6.11.4",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^2.0.22",
+    
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sass": "^1.62.1"
