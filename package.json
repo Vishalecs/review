@@ -4,10 +4,12 @@
   "description": "employee reviews project",
   "main": "index.js",
   "scripts": {
-    "run": "nodemon index.js",
+    
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --no-source-map --watch assets/scss:assets/css",
-    "start": "npm-run-all --parallel sass run"
+    
+     "start": "node index.js",
+    "build": "npm start"
   },
   "author": "vikas",
   "license": "ISC",
