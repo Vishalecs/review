@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/employee.css">
+
+<h4>All Employees List</h4>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Admin</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Promoted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < employees.length; i++) { %>
+        <tr class="row">
+          <th scope="row"><%= i + 1 %></th>
+          <td><%= employees[i].name %></td>
+          <td><%= employees[i].email %></td>
+          <td><%= employees[i].password %></td>
+          <td><%= employees[i].isAdmin %></td>
+          <% if (locals.user.id != employees[i]._id) { %>
+            <td><a href="/admin/editEmployee/<%= employees[i]._id %>" class="btn">Edit</a></td>
+         
+            <td><a href="/admin/deleteEmployee/<%= employees[i]._id %>" class="btn">Delete</a></td>
+            <td><a href="/admin/promoteEmployee/<%= employees[i]._id %>" class="btn">Promoted</a></td>
+          <% } else { %>
+            <td><a href="" class="btn" disabled>Update</a></td>
+            <td><a href="" class="btn" disabled>Delete</a></td>
+            <td><a href="" class="btn" disabled>Promoted</a></td>
+          <% } %>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

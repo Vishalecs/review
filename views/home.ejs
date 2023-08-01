@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<% if(locals.user){ %>
+    <div class="outerDiv">
+        <div class="home-box">
+            <div>
+                <h2>Employee Review System</h2>
+            </div>
+            <div class="employeereview">
+                
+                <i><h5>This task is assigned by the Admin</h5></i>
+            </div>
+            
+            <!-- Review box -->
+            <div class="reviewBox">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">FeadBack</th>
+                      </tr>
+                    </thead>
+                    <% for(let i=0 ; i<recipent.length ; i++){ %>
+                        <% if(recipent[i] != null){ %>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><%= i+1 %></th>
+                                    <td class="cell"><%= recipent[i].name %></td>
+                                    <td class="cell"><button onclick="openFeedback()">Feedback</button></td>
+                                    <div class="feedback-container" id="feedback-container">
+                                        <div class="form-container">
+                                        <form action="/reviews/newReview/<%= recipent[i]._id %>">
+                                            <textarea name="newReview" cols="30" rows="10" placeholder="Review, here !" id="floatingTextarea2"></textarea>
+                                            <br>
+                                            <button type="submit" class="submitHomeButton">Submit</button>
+                                            <button type="reset" onclick="closeFeedback()"> Cancle</button>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        <% } %>
+                    <% } %>
+                </table>
+                <br>
+            </div>
+
+            
+                <!-- <div class="reviewBox">
+                <% for(let i=0 ; i<recipent.length ; i++){ %>
+                    <% if(recipent[i] != null){ %>
+                        <div class="outerBox">
+                            <h6>
+                                To : <%= recipent[i].name %>
+                            </h6>
+                            <div class="innerBox">
+                                <form action="/reviews/newReview/<%= recipent[i]._id %>">
+                                    <textarea name="newReview" rows="10" placeholder="Review, here !" id="floatingTextarea2"></textarea>
+                                    <br>
+                                    <button type="submit" class="submitHomeButton">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div> -->
+        </div>
+
+        <div class="reviews">
+            <div class="myreview"><h3>My Reviews</h3></div>
+            <div class="card-out">
+                <% for(let review of reviews){ %>
+                    <div class="in-card">
+                        <h5 class="cls-text">Message: <%= review.content %></h5>
+                        <p class="cls-text">From: <%= review.name %></p>
+                    </div>
+                    <hr>
+                <% } %>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<script src="/js/home.js"></script>

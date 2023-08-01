@@ -1,0 +1,83 @@
+/* CSS for the navigation bar */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Heading of the admin Page */
+.heading {
+  color: darkgreen;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Container for assigning reviewer and reviewing */
+.reviewContainer {
+  margin-top: 30px;
+  width: 50%;
+  border: 2px solid darkgreen;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* for the reviewer container */
+.reviewer {
+  width: 100%;
+}
+
+/* Center align text */
+.text-center {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Style for the select elements */
+form select.form-select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Style for the submit buttons */
+.submitButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submitButtons button {
+  background-color: lightgray;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submitButtons button:hover {
+  background-color: gray;
+}

@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/css/admin.css">
+
+<div class="container-fluid">
+    <div class="heading">Kindly, assign Recipient and Reviewer</div>
+    <div class="reviewContainer">
+        <div class="reviewer">
+            <div class="tect-center">
+                Assign Task
+            </div>
+            <hr>
+            <form action="/admin/setReviewes" method="POST" class="card-body">
+                <div>
+                    Set Reviewer
+                    <select class="form-select" aria-label="Default select example" name="sender">
+                        <option selected>Sender</option>
+                        <% for(let i=0 ; i<employee.length ; i++){ %>
+                            <option value="<%= employee[i].id %>"><%= employee[i].name %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="reviewee">
+                    Select the Recipient Employee
+                    <select class="form-select" aria-label="Default select example" name="reciver">
+                        <option selected>Reciver</option>
+                        <% for(let i = 0; i<employee.length ; i++){ %>
+                        
+                            <option value= <%= employee[i].id %> > <%= employee[i].name %> </option>
+                            
+                        <%}%>
+                    </select>
+                </div>
+
+                <div class="submitButtons">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="reviewContainer">
+        <div class="reviewer">
+            <div class="tect-center">
+                Make admin to any Employee
+            </div>
+            <hr>
+
+            <form action="/admin/newAdmin" method="POST">
+                <select class="form-select" aria-label="Default select example" name="selectedUser">
+                    <option selected>Select to make Admin</option>
+                    <% for(let i = 0; i<employee.length ; i++){ %>
+                        
+                        <option value= <%= employee[i]._id %> > <%= employee[i].name %> </option>
+                        
+                    <%}%>
+                </select>
+
+                <div class="submitButtons">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

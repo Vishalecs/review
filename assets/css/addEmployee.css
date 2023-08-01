@@ -1,0 +1,76 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; /* Use viewport height for full-screen height */
+}
+
+.mainContainer .formInput {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  align-items: center;
+  width: 40%;
+  height: 70%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  background-color: #fff; /* Add a white background color */
+}
+
+.mainContainer .formInput h1 {
+  font-size: 2rem; /* Increase font size */
+  margin-top: 2rem;
+  color: #333; /* Change text color to a darker shade */
+}
+
+.mainContainer .formInput form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer .formInput form input {
+  width: 18rem;
+  margin: 0.6rem;
+  font-size: 1.2rem; /* Increase font size */
+  padding: 0.6rem 1rem; /* Adjust padding */
+  border-radius: 1rem;
+  border: 1px solid #ccc; /* Add a border */
+}
+
+.mainContainer .formInput form input:focus {
+  outline: none; /* Remove default outline on focus */
+  border-color: #555; /* Change border color on focus */
+}
+
+.mainContainer .formInput form .button .submitButton button {
+  font-size: 1.2rem; /* Increase font size */
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+.mainContainer .formInput form .button .submitButton button:hover {
+  background-color: #333; /* Darken background color on hover */
+}
+
+.mainContainer .formInput .extraStuff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer .formInput .extraStuff .forgetPassword {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  color: #555; /* Change text color to a darker shade */
+}
+
+/* Add more styling for any additional elements inside the .mainContainer */

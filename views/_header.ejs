@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/header.css">
+
+<div>
+    <div class="navBar">
+        <div class="nameOfApp">
+            <a href="/"><small>ERS</small></a>
+
+        </div>
+        <% if(locals.user){ %>
+            <% if(locals.user.isAdmin){ %>
+                <div class="li">
+            
+                    <a href="/admin/assignWork"><small>Assign Work</small></a>
+                    <a href="/admin/view-employee"><small>Employees</small></a>
+                    <a href="/admin/add-employee"><small>Add Employee</small></a>
+                    <span class="nameOfUser"><i class="fa-solid fa-user"></i><%= locals.user.name %></span>
+                    <a href="/users/sign-out"><small>LogOut</small></a>
+                </div>
+            <% }else{ %> 
+                <div class="li">
+                    <span class="nameOfUser"><i class="fa-solid fa-user"></i><%= locals.user.name %></span>
+                    <a href="/users/sign-out"><small>LogOut</small></a>
+                </div>
+            <% } %>
+        <% }else{ %>
+            <div class="notLogIn">
+                <ul>
+                    <li><a href="/users/sign-in">Sign-In</a></li>
+                   
+                </ul>
+            </div>
+        <% } %>
+    </div>
+</div>
